@@ -118,6 +118,11 @@ class _InstaAppState extends State<InstaApp> {
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    // _footerIcon(Icon(Icons.home), 'home'),
+                    // _footerIcon(Icon(Icons.search_rounded), 'search'),
+                    // _footerIcon(Icon(Icons.video_call), 'reels'),
+                    // _footerIcon(Icon(Icons.shopping_bag), 'shop'),
+                    // _footerIcon(Icon(Icons.people), 'profile'),
                     GestureDetector(
                         onTap: () {
                           page = 'home';

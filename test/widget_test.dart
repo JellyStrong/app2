@@ -1,30 +1,38 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-
-import 'package:app2/main.dart';
+import 'dart:io';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  showData();
+}
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+void showData() {
+  startTask();
+  accessData();
+  fetchData();
+}
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+void startTask() {
+  String info1 = '요청수행 시작';
+  print(info1);
+}
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
-  });
+void accessData() {
+  Duration time = Duration(seconds: 3);
+
+  String info2 = '데이터에 접속중';
+  if (time.inSeconds > 2) {
+    //sleep(time);
+    Future.delayed(time, () {
+      //Future.delayed메서드는 듀레이션 값과 그후 실행할 함수를 받는다.
+      info2 = '데이터에 처리 완료';
+      print(info2);
+    });
+  } else {
+    info2 = '데이터를 가져왔습니다.';
+    print(info2);
+  }
+}
+
+void fetchData() {
+  String info3 = '잔액은 8,500만원 입니다.';
+  print(info3);
 }
